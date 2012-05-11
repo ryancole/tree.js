@@ -43,6 +43,50 @@ Tree.prototype.find = function (key) {
     
 };
 
+// remove
+Tree.prototype.remove = function (key) {
+    
+    var result = false;
+    
+    this.traverse(function (node) {
+        
+        if (this.comparator(node.key, key) > 0) {
+            
+            return node.left;
+            
+        } else if (this.comparator(node.key, key) < 0) {
+            
+            return node.right;
+            
+        } else {
+            
+            result = node.value;
+            this.remove_node(node);
+            
+        }
+        
+    });
+    
+    // adjust the total count
+    if (result)
+        this.count = this.root ? this.count - 1 : 0;
+    
+    // return value that was removed
+    return result;
+    
+};
+
+// remove node
+Tree.prototype.remove_node = function (node) {
+    
+    if (node.left != null || node.right != null) {
+        
+        
+        
+    }
+    
+};
+
 // add
 Tree.prototype.insert = function (key) {
     
