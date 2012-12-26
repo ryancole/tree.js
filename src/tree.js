@@ -1,9 +1,13 @@
 
-// include node object
-var Node = require('./node');
+// local modules
+var Node = require('./tree-node').Node;
+
+// module exports
+exports.Tree = Tree;
+exports.createTree = function createTree (comparator) { return new Tree(comparator); };
 
 // tree constructor
-var Tree = module.exports = function (comparator) {
+function Tree (comparator) {
     
     this.count = 0;
     this.root = null;

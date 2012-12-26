@@ -1,6 +1,10 @@
 
+// module exports
+exports.Node = Node;
+exports.createNode = function createNode (key, parent) { return new Node(key, parent); };
+
 // node constructor
-var Node = module.exports = function (key, parent) {
+function Node (key, parent) {
     
     this.key = key;
     this.height = 1;

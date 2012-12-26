@@ -1,16 +1,15 @@
 
-// import tree module
-var Tree = require('../src/tree');
+var assert = require('assert');
 
-// init tree
-var t = new Tree;
+// create a new tree
+var tree = require('../src/tree').createTree();
 
-// insert random data
-for (var x = 0; x < 1000000; x++) {
+// insert some values
+for (var x = 0; x < 1000; x++) {
     
-    t.insert(x);
+    tree.insert(x);
     
 }
 
-// perform a search
-console.log(t.find(55));
+assert.equal(tree.count, 1000, 'expected the tree to contain 1000 nodes');
+assert.equal(tree.find(64).key, 64, 'expected to get back a node for 64');

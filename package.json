@@ -1,0 +1,17 @@
+{
+    "name": "tree.js",
+    "version": "0.0.1",
+    "description": "A simple AVL tree example.",
+    "main": "src/tree.js",
+    "scripts": {
+        "test": "node test/avltree.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ryancole/tree.js.git"
+    },
+    "keywords": ["tree", "avl"],
+    "author": "Ryan Cole",
+    "license": "BSD",
+    "readmeFilename": "readme.md"
+}
