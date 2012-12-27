@@ -1,12 +1,13 @@
 
 // module exports
 exports.Node = Node;
-exports.createNode = function createNode (key, parent) { return new Node(key, parent); };
+exports.createNode = function createNode (key, value, parent) { return new Node(key, value, parent); };
 
 // node constructor
-function Node (key, parent) {
+function Node (key, value, parent) {
     
     this.key = key;
+    this.value = value;
     this.height = 1;
     this.left = null;
     this.right = null;

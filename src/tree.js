@@ -207,12 +207,12 @@ Tree.prototype.clear = function () {
 };
 
 // add
-Tree.prototype.insert = function (key) {
+Tree.prototype.insert = function (key, value) {
     
     if (this.root == null) {
         
         // if tree is empty, create new root node
-        this.root = new Node(key);
+        this.root = new Node(key, value);
         this.min_node = this.root;
         this.max_node = this.root;
         this.count++;
@@ -237,7 +237,7 @@ Tree.prototype.insert = function (key) {
             if (node.left == null) {
                 
                 // create the new node as a child of this node
-                var new_node = new Node(key, node);
+                var new_node = new Node(key, value, node);
                 
                 // pin new node to parent node
                 node.left = new_node;
@@ -262,7 +262,7 @@ Tree.prototype.insert = function (key) {
             if (node.right == null) {
                 
                 // create the new node as a child of this node
-                var new_node = new Node(key, node);
+                var new_node = new Node(key, value, node);
                 
                 // pin new node to parent node
                 node.right = new_node;

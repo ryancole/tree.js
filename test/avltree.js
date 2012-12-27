@@ -7,7 +7,7 @@ var tree = require('../src/tree').createTree();
 // insert some values
 for (var x = 0; x < 1000; x++) {
     
-    tree.insert(x);
+    tree.insert(x, { timestamp: new Date });
     
 }
 

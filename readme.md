@@ -5,13 +5,13 @@ var tree = require('tree').createTree();
 
 for (var x = 0; x < 1000; x++) {
     
-    // insert a new node, using a given key
-    tree.insert(x);
+    // insert a new node, using a given key and value
+    tree.insert(x, { timestamp: new Date });
     
 }
 
-// look-up a node, by key
-tree.find(55);
+// look-up a value, by key
+var value = tree.find(55).value;
 
 // remove a node, by key
 tree.remove(55);
